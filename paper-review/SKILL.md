@@ -1,18 +1,22 @@
 ---
 name: paper-review
-description: Explain a research paper, expanding only the concepts the user flags as unfamiliar.
+description: Explain a research paper at depth calibrated per-concept by user self-rating.
 disable-model-invocation: true
 ---
-If the user attached a paper explain it else ask to attach. Default every concept to expert level, consistent with the standing no-pedagogy preference. Expand only the threads the user flags as unfamiliar.
+If no paper is attached, ask the user to attach one before proceeding.
 
-Familiarity is supplied inline at invocation as a list of `learning` keywords (e.g. `/paper-review lindblad mpemba`). No file, no interview. If no flags are given, treat the entire paper at expert level. If the paper's own emphasis makes a likely-unfamiliar concept salient and none was flagged, name it in one line and offer to expand — do not auto-expand.
+**Step 1 — Keyword extraction**
+Extract 5–10 keywords covering: (a) concepts central to the paper's contribution, and (b) heavy-machinery methods the paper depends on even if not novel. For each keyword, provide a one-line gloss. Present as an annotated list and ask the user to rate each as novice / learning / expert.
 
-Enumerate every major concept the paper introduces, then resolve each against the supplied `learning` list:
-- **learning** — a supplied keyword maps to this concept with high confidence. Define it and explain the method by analogy to the user's known areas (MIPT, stabilizer/Clifford circuits, open-system dynamics, Bose-Hubbard, numerical many-body). This overrides the global no-pedagogy preference for this thread only.
-- **expert** (default) — no `learning` flag maps here, or the paper's concept lies inside stated expertise. Terse; omit textbook background; keep derivations and the hard methodology.
+**Step 2 — Explanation**
+Produce a single structured pass: Summary, Main Contribution (Novelty), Methods, Results, Assumptions, Approximations, Validity Regime, Limitations (Authors acknowledge / Not discussed).
 
-Matching: map a flag to a concept only on high semantic confidence. A `learning` flag left unused (no concept matched) is reported in one line so the user can re-flag. A concept that spans a flagged method built on unflagged machinery: expand the flagged method, keep the machinery terse.
+Depth per concept is determined by rating:
+- **novice** — motivation, intuition, analogy to user's known areas
+- **learning** — formalism, derivation, method mechanics
+- **expert** — terse; omit background
 
-Workflow:
-1. Explain with structure: Summary, Main contribution (Novelty), Methods, Results, Assumptions, Approximations, Validity Regime, Limitations (Authors acknowledge / Not discussed). Expand `learning`-flagged threads inline within the relevant section (usually Methods) rather than as a separate pass.
-2. Ask if the user wants a topic-by-topic deep dive on a specific topic.
+Depth varies inline within each section; the section structure is fixed regardless of ratings. If a novice- or learning-rated concept depends on an expert-rated one, add a single callout ("this builds on X") so the user can re-rate if needed — do not auto-expand X.
+
+**Step 3**
+Ask if the user wants a deep dive on any specific concept or section.
