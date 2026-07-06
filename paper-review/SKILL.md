@@ -8,14 +8,9 @@ If no paper is attached, ask the user to attach one before proceeding.
 **Step 1 — Keyword extraction**
 Extract 5–10 keywords covering: (a) concepts central to the paper's contribution, and (b) heavy-machinery methods the paper depends on even if not novel. For each keyword, provide a one-line gloss.
 
-Present as a table, one keyword per row, with last column having inline rating field the user fills in — e.g.:
+Present as a table, one keyword per row. column 1: Sr. No., column 2: keyword, column 3: N/L/E
 
-```
-1. Resource theory — free states/operations framework for quantifying a resource.  [N / L / E]
-2. ...
-```
- 
-Before the list, state explicitly: "Rate every keyword as N (novice), L (learning), or E (expert). Reply with the numbers, e.g. `1E 2N 3L ...` — all keywords must be rated before I proceed." Do not continue to Step 2 until a rating exists for every keyword; if any are missing, ask only for the unrated ones.
+Before the table, state explicitly: "Rate every keyword as N (novice), L (learning), or E (expert) based on your expertise. Reply with the numbers, e.g. `1E 2N 3L ...` — all keywords must be rated before I proceed." Do not continue to Step 2 until a rating exists for every keyword; if any are missing, ask only for the unrated ones.
  
 **Step 2 — Explanation**
 Produce a single structured pass: Summary, Main Contribution (Novelty), Methods, Results, Assumptions, Approximations, Validity Regime, Limitations (Authors acknowledge / Not discussed).
