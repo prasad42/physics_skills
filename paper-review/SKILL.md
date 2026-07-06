@@ -4,7 +4,7 @@ description: Explain a research paper at depth calibrated per-concept by user se
 disable-model-invocation: true
 ---
 If no paper is attached, ask the user to attach one before proceeding.
- 
+
 **Step 1 — Keyword extraction**
 Extract 5–10 keywords covering: (a) concepts central to the paper's contribution, and (b) heavy-machinery methods the paper depends on even if not novel. For each keyword, provide a one-line gloss.
 
