@@ -6,13 +6,16 @@ A small collection of reusable [Claude](https://claude.ai) skills, leaning towar
 
 | Skill | What it does | Best on |
 |-------|--------------|---------|
-| [grill-me](./grill-me/) | Interviews you relentlessly about a plan or design, one question at a time, until you reach shared understanding. | Claude Code |
+| [grill-me](./grill-me/) † | Interviews you relentlessly about a plan or design, one question at a time, until you reach shared understanding. | Claude Code |
 | [grill-me-physics](./grill-me-physics/) | Stress-tests a physics argument, model, or numerical protocol via systematic Socratic questioning over its dependency graph. | Either (leans Chat) |
-| [handoff](./handoff/) | Compacts the current conversation into a handoff document a fresh agent can pick up. | Claude Code |
+| [handoff](./handoff/) † | Compacts the current conversation into a handoff document a fresh agent can pick up. | Claude Code |
 | [lit-rev-physics](./lit-rev-physics/) | Expertise-calibrated literature review of a physics subfield: grills your field model, retrieves and snowballs a corpus via alphaXiv, then synthesizes a thematic write-up. | Claude Code |
 | [paper-review](./paper-review/) | Explains a research paper at a depth calibrated per-concept by your own N/L/E self-rating. | Chat |
 | [project-summary](./project-summary/) | Interviews you about a research draft to build or refresh a `project_summary.md`, plus a suggested Claude-Project custom-instructions block. | Claude Code (+ a claude.ai Project) |
-| [teach](./teach/) | Teaches a topic statefully across sessions, using a workspace of missions, lessons, and learning records. | Claude Code |
+| [teach](./teach/) † | Teaches a topic statefully across sessions, using a workspace of missions, lessons, and learning records. | Claude Code |
+| [writing-great-skills](./writing-great-skills/) † | Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable. | Either |
+
+† Copied from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). See [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).
 
 ## Installing skills
 
@@ -48,6 +51,7 @@ Exact menu labels change over time — see the [claude.ai Skills documentation](
 The "Best on" column above is a recommendation, not a hard rule — most skills technically run on either surface. The split follows what each skill needs:
 
 - **Claude Code** for the filesystem-heavy skills — `teach`, `handoff`, `project-summary`, `grill-me`, and `lit-rev-physics` — which read or write files, maintain a workspace, or explore a codebase to answer their own questions.
+- **Either** for `writing-great-skills`, a reference doc with no filesystem needs of its own.
 - **Chat** for the attach-and-reason skills — `paper-review` (easiest place to attach a PDF) and `grill-me-physics` (pure reasoning, no files needed).
 
 `project-summary` is a hybrid: run it in Claude Code so it can write `project_summary.md`, then paste its suggested custom-instructions block into the matching claude.ai Project.
