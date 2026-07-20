@@ -24,7 +24,7 @@ A skill is just a folder containing a `SKILL.md`, so the **same folder works on 
 ### Option 1: Quick install (npx)
 
 ```bash
-npx skills add prasadphys90210/physics_skills
+npx skills add prasad42/physics_skills
 ```
 
 The [skills CLI](https://skills.sh) detects your agent (Claude Code, opencode, Codex, Cursor, etc.) and installs the skills to the right location. Run with `--list` to see available skills first, or add `--skill <name>` to install a single one.
