@@ -1,4 +1,4 @@
-# physics_skills
+# physics-skills
 
 A small collection of reusable AI agent skills, leaning toward physics and research work. Each top-level folder is one skill, defined by its `SKILL.md` (plus any supporting files). Install a folder into your agent's skills directory or upload it to a chat surface and it becomes a `/command` you can invoke.
 
@@ -24,7 +24,7 @@ A skill is just a folder containing a `SKILL.md`, so the **same folder works on 
 ### Option 1: Quick install (npx)
 
 ```bash
-npx skills add prasad42/physics_skills
+npx skills add prasad42/physics-skills
 ```
 
 The [skills CLI](https://skills.sh) detects your agent (Claude Code, opencode, Codex, Cursor, etc.) and installs the skills to the right location. Run with `--list` to see available skills first, or add `--skill <name>` to install a single one.
