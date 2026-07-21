@@ -1,7 +1,6 @@
 ---
 name: grill-me-physics
-description: Stress-tests a physics argument, model, or protocol by systematic Socratic questioning.
-disable-model-invocation: true
+description: Stress-tests a physics argument, model, or protocol by systematic Socratic questioning when user asks for a grilling session on their argument/draft/note/idea. Also invoke the skill when a shared understanding for a physics argument or a project is required.
 ---
 
 Interrogate this physics argument, model, or numerical protocol by systematic Socratic questioning. Treat the argument as a dependency graph over its nodes — definitions, assumptions, derivation steps, approximation regimes, observable consequences, failure modes — where edges are genuine logical or physical dependencies (e.g. an approximation regime constrains which derivation steps are valid; a failure mode may force revision of an upstream assumption). Identify the dependencies between nodes and resolve each blocker before its dependents. Do not force a linear order where the structure is a DAG.
