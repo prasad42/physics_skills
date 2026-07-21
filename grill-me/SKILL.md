@@ -1,7 +1,6 @@
 ---
 name: grill-me
-description: Interviews the user relentlessly about a plan or design.
-disable-model-invocation: true
+description: Interviews the user relentlessly about a plan or design when user asks for a grilling session.Invoke the skill when a shared understanding about an idea or a project is required.
 ---
 
 Interview me relentlessly about every aspect of this plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
